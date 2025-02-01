@@ -1,0 +1,37 @@
+.footer {
+    background-color: #6a1b9a;
+    /* Rich purple for elegance */
+    color: #ffffff;
+    padding: 30px 15px;
+    text-align: center;
+    /* Center align the text for better balance */
+    border-top: 5px solid #4A00E0;
+    /* Add a decorative border */
+}
+
+.footer a {
+    color: #ffcc00;
+    /* Bright yellow for contrast */
+    font-weight: bold;
+    text-decoration: none;
+    /* Remove underline for cleaner look */
+}
+
+.footer a:hover {
+    color: #ffffff;
+    /* Hover effect for links */
+    text-decoration: underline;
+}
+
+.footer p {
+    margin: 5px 0;
+    /* Space out paragraphs slightly */
+    font-size: 1rem;
+    /* Standard readable size */
+}
+
+.footer .text-danger {
+    color: #e53935;
+    /* Eye-catching red for emphasis */
+    font-weight: bold;
+}

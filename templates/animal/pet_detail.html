@@ -1,0 +1,26 @@
+{% extends "base/base.html" %} {% block start %}
+<div class="container mt-5">
+  <h2>{{ pet.name }}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <img src="{{ pet.image.url }}" class="img-fluid" alt="{{ pet.name }}" />
+    </div>
+    <div class="col-md-6">
+        <h2>Health & Care Information</h2>
+        <p><strong>Breed:</strong> {{ pet.breed }}</p>
+        <p><strong>Age:</strong> {{ pet.age }} years</p>
+        <p><strong>Description:</strong> {{ pet.description }}</p>
+        <div class="detail-section">
+            <p><strong>Health Status:</strong> {{ pet.pet_details.health_status }}</p>
+            <p><strong>Vaccination Status:</strong> {{ pet.pet_details.vaccination_status }}</p>
+            <p><strong>Microchipped:</strong> {{ pet.pet_details.microchipped|yesno:"Yes,No" }}</p>
+            <p><strong>Spayed/Neutered:</strong> {{ pet.pet_details.spayed_neutered|yesno:"Yes,No" }}</p>
+            <p><strong>Special Needs:</strong> {{ pet.pet_details.special_needs|default:"None" }}</p>
+        <a href="{% url 'apply_for_adoption' pet.id %}" class="btn btn-success"
+          >Apply for Adoption</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

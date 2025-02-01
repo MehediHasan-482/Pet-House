@@ -1,0 +1,76 @@
+{% extends "base/base.html" %}
+
+{% block start %}
+
+<body>
+  <div class="slider-frame">
+    <div class="slide-images">
+      {% for animal in animals %}
+      <div class="img-container">
+        <img src="/media/{{ animal.animal_images.first.image }}" alt="Animal Image">
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+
+<!-- Hero Section -->
+<section class="hero bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4">Welcome to Pet House!</h1>
+    <p class="lead">Your trusted platform for adopting pets and making a difference.</p>
+    <a href="/animal/petlist" class="btn btn-light btn-lg">Adopt a Pet</a>
+  </div>
+</section>
+
+<!-- Featured Pets Section -->
+<section class="featured-pets py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Pets for Adoption</h2>
+    <div class="row">
+      {% for animal in animals %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{{ animal.animal_images.first.image.url }}" class="card-img-top" alt="{{ animal.animal_name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.animal_name }}</h5>
+            <p class="card-text">{{ animal.animal_description|truncatewords:20 }}</p>
+            <a href="{% url 'animal_detail' slug=animal.slug %}" class="btn btn-primary">Pet Information</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% comment %} <section class="featured-pets py-5 bg-light">
+<div class="container mt-5">
+  <h2 class="text-center">Available Pets for Adoption</h2>
+  <div class="row mt-4">
+    {% for pet in pets %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ pet.image.url }}" class="card-img-top" alt="{{ pet.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ pet.name }}</h5>
+          <p class="card-text">{{ pet.breed }}</p>
+          <a href="{% url 'pet_detail' pet.id %}" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section> {% endcomment %}
+
+<!-- About Us Section -->
+<section class="about-us py-5">
+  <div class="container text-center">
+    <h2 class="display-4">About Us</h2>
+    <p class="lead">We are dedicated to providing a safe and loving environment for all pets.</p>
+    <a href="/about" class="btn btn-dark btn-lg">Learn More</a>
+  </div>
+</section>
+
+{% endblock %}
+{% include "base/footer.html" %}

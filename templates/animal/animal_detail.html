@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{% block start %}
+
+
+<body>
+    <div class="container">
+        <h1>{{ animal.animal_name }}</h1>
+        {% comment %} <p><strong>Category:</strong> {{ animal.category.name }}</p> {% endcomment %}
+        <p><strong>Gender:</strong> {{ animal.gender }}</p>
+        <p><strong>Age:</strong> {{ animal.age }}</p>
+        <p><strong>Weight:</strong> {{ animal.weight }} kg</p>
+        <p><strong>Colour:</strong> {{ animal.colour }}</p>
+        <p><strong>Description:</strong> {{ animal.animal_description }}</p>
+
+        <div class="detail-section">
+            <h2>Health & Care Information</h2>
+            <p><strong>Health Status:</strong> {{ animal.details.health_status }}</p>
+            <p><strong>Vaccination Status:</strong> {{ animal.details.vaccination_status }}</p>
+            <p><strong>Microchipped:</strong> {{ animal.details.microchipped|yesno:"Yes,No" }}</p>
+            <p><strong>Spayed/Neutered:</strong> {{ animal.details.spayed_neutered|yesno:"Yes,No" }}</p>
+            <p><strong>Special Needs:</strong> {{ animal.details.special_needs|default:"None" }}</p>
+        </div>
+
+        <a href="{% url 'pet_list' %}" class="back-link">← Back to Pet List</a>
+        {% comment %} <a href="{% url 'pet_detail' %}" class="back-link">View Detail</a> {% endcomment %}
+    </div>
+</body>
+</html>
+
+{% endblock %}
+
+{% include "base/footer.html" %}

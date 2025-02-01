@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block start %}
+<div class="container mt-5">
+  <h2 class="text-center">Buy Medicines for Your Pets</h2>
+  <div class="row mt-4">
+    {% if medicines %}
+      {% for medicine in medicines %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          {% if medicine.image %}
+          <img src="{{ medicine.image.url }}" class="card-img-top" alt="{{ medicine.name }}">
+          {% else %}
+          <img src="{% static 'default-medicine-image.jpg' %}" class="card-img-top" alt="Default Medicine Image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ medicine.name }}</h5>
+            <p class="card-text">{{ medicine.description|truncatechars:100 }}</p>
+            <p class="card-text"><strong>Dosage:</strong> {{ medicine.dosage }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ medicine.price }}</p>
+            <p class="card-text"><strong>Stock Available:</strong> {{ medicine.stock_quantity }}</p>
+            {% if medicine.stock_quantity > 0 %}
+            <form method="post" action="{% url 'buy_medicine' medicine.id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-success">Buy Now</button>
+            </form>
+            {% else %}
+            <button class="btn btn-secondary" disabled>Out of Stock</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-center text-muted">No medicines are available right now. Please check back later!</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block start %}
+<div class="container mt-5">
+  <h2>Apply for Adoption</h2>
+  <p>Applying to adopt: <strong>{{ pet.name }}</strong></p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit Application</button>
+  </form>
+</div>
+{% endblock %}

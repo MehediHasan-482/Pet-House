@@ -1,0 +1,103 @@
+/* General Header Styling */
+.section-header {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #f8f9fa;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #495057;
+    color: #FFD700;
+}
+
+/* Brand Logo Styling */
+.brand-wrap img.logo {
+    max-height: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.brand-wrap img.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Search Bar Styling */
+.search .form-control {
+    border-radius: 0;
+    border: 1px solid #ced4da;
+}
+
+.search .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 10px
+}
+
+.search .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* User Profile Icon */
+.widget-header.icontext .icon {
+    background-color: #f8f9fa;
+    color: #343a40;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.widget-header.icontext .icon:hover {
+    background-color: #FFD700;
+    color: #343a40;
+}
+
+.widget-header.icontext .text span {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.widget-header.icontext .text a {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.widget-header.icontext .text a:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brand-wrap {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .search .form-control {
+        width: 100%;
+    }
+
+    .widgets-wrap {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,104 @@
+/* General Container Styling */
+
+
+/* Form Heading */
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Structure */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Labels */
+form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6c757d;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+/* Input Fields */
+/* Input Fields */
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0.5px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Input Focus Effect */
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 86, 179, 0.4);
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #0056b3, #007bff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    transform: translateY(-2px);
+}
+
+/* Form Validation */
+form input:invalid,
+form textarea:invalid,
+form select:invalid {
+    border-color: #eee7e8;
+    background-color: #ffe6e6;
+}
+
+form input:valid,
+form textarea:valid,
+form select:valid {
+    border-color: #28a745;
+    background-color: #f0fff0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,68 @@
+{% extends "base/base.html" %} {% block start %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Form</title>
+  <style ="body"></style>
+</head>
+<body>
+  <div class="payment-form-container">
+    <h2>Payment Form</h2>
+    <form method="POST">
+      {% csrf_token %} {% include "base/alert.html" %}
+      <!-- Cardholder Name -->
+      <div class="form-group">
+        <label for="cardholder-name">Account Holder Name</label>
+        <input
+          type="text"
+          id="cardholder-name"
+          name="cardholder_name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <!-- Card Number -->
+      <div class="form-group">
+        <label for="card-number">Account Number</label>
+        <input
+          type="number"
+          id="card-number"
+          name="card_number"
+          placeholder="Must be 11 digit"
+          maxlength="11"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="card-number">Transaction Number</label>
+        <input
+          type="text"
+          id="trans-number"
+          name="trans_number"
+          placeholder="TrxID"
+          maxlength="15"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="card-number">Amount</label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          placeholder="Amount"
+          maxlength="15"
+          required
+        />
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn">Submit donetion</button>
+    </form>
+  </div>
+</body>
+
+{% endblock %} {% include "base/footer.html" %}

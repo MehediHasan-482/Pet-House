@@ -1,0 +1,124 @@
+{% extends "base/base.html" %} {% block start %}
+<body>
+  <!-- Header Section -->
+  <section class="intro-section text-center py-5">
+    <div class="container">
+      <h2 class="section-title mb-4">Adopt or Get Involved</h2>
+      <p class="lead text-muted">
+        Whether you're ready to welcome a furry friend into your home or want to
+        help us in other ways, there's something for everyone. Let's make a
+        difference together!
+      </p>
+    </div>
+  </section>
+
+  <!-- Adoption Section -->
+  <section class="adoption-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="adopt-card">
+            <h3 class="card-title">Adopt a Pet</h3>
+            <img
+              src="/media/animal/adopt2.webp"
+              class="img-fluid"
+              alt="Adopt a pet"
+            />
+            <p class="card-text mt-3">
+              Bring a pet into your life and give them a loving home. Find your
+              new best friend from our list of available pets. They are waiting
+              for you!
+            </p>
+            <a href="/animal/petlist" class="btn btn-primary">View Available Pets</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="adopt-card">
+            <h3 class="card-title">How to Adopt</h3>
+            <img
+              src="/media/animal/adopt3.webp"
+              class="img-fluid"
+              alt="How to adopt"
+            />
+            <p class="card-text mt-3">
+              Adopting a pet is easy! Learn about the adoption process, the
+              steps involved, and how you can provide a forever home to one of
+              our animals.
+            </p>
+            <a href="/adopt-process" class="btn btn-success">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved Section -->
+  <section class="get-involved-section bg-light py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Get Involved</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="involved-card">
+            <h4>Volunteer with Us</h4>
+            <img
+              src="/media/animal/volenteer2.webp"
+              class="img-fluid"
+              alt="Volunteer"
+            />
+            <p>
+              Help us care for the animals in our shelter, assist with events,
+              and provide valuable support in our mission to save lives.
+            </p>
+            <a href="/accounts/volunteer/register" class="btn btn-info">Sign Up to Volunteer</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="involved-card">
+            <h4>Donate</h4>
+            <img
+              src="/media/animal/donetion1.avif"
+              class="img-fluid"
+              alt="Donate"
+            />
+            <p>
+              Your donation helps provide food, shelter, and medical care for
+              animals in need. Every bit counts!
+            </p>
+            <a href="/donetion/donetion" class="btn btn-warning">Donate Now</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="involved-card">
+            <h4>Adopter Register</h4>
+            <img
+              src="/media/animal/foster1.webp"
+              class="img-fluid"
+              alt="Foster a pet"
+            />
+            <p>
+              Register yourself for adopting pets.
+              For better monitoring, receiving medicine.
+              Join us in giving pets a loving home.
+
+            </p>
+            <a href="/accounts/adopter_register" class="btn btn-secondary"
+              >Register as an Adopter</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact or More Information Section -->
+  <section class="contact-section text-center py-5">
+    <div class="container">
+      <h4 class="mb-4">Have Questions? Reach Out to Us!</h4>
+      <a href="/contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+</body>
+{% endblock %}
